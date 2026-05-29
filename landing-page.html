@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unlock Your Financial Freedom</title>
+
+  <!-- ============================================================
+       FACEBOOK PIXEL — Paste your Pixel ID below
+       Replace  YOUR_PIXEL_ID  with your actual Pixel ID
+  ============================================================ -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', 'YOUR_PIXEL_ID'); /* <-- REPLACE WITH YOUR PIXEL ID */
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PageView&noscript=1"/>
+      <!-- ^^^^ Also replace YOUR_PIXEL_ID here ^^^^ -->
+  </noscript>
+  <!-- ============================================================
+       END FACEBOOK PIXEL
+  ============================================================ -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --gold:       #C9A84C;
+      --gold-light: #E8C97A;
+      --gold-dim:   #7a621e;
+      --ink:        #0D0C0A;
+      --cream:      #F5F0E8;
+      --muted:      #8a8070;
+      --white:      #FDFCFA;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background-color: var(--ink);
+      color: var(--cream);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.35;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 24px;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -60%);
+      width: 700px; height: 700px;
+      background: radial-gradient(ellipse at center, rgba(201,168,76,0.13) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .corner {
+      position: absolute;
+      width: 52px; height: 52px;
+      border-color: var(--gold-dim);
+      border-style: solid;
+      opacity: 0.5;
+    }
+    .corner--tl { top: 24px; left: 24px; border-width: 1px 0 0 1px; }
+    .corner--tr { top: 24px; right: 24px; border-width: 1px 1px 0 0; }
+    .corner--bl { bottom: 24px; left: 24px; border-width: 0 0 1px 1px; }
+    .corner--br { bottom: 24px; right: 24px; border-width: 0 1px 1px 0; }
+
+    .eyebrow {
+      font-size: 0.68rem;
+      font-weight: 500;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 26px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.2s ease forwards;
+    }
+    .eyebrow span {
+      display: inline-block;
+      padding: 6px 18px;
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+    }
+
+    h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: clamp(2.8rem, 8vw, 6rem);
+      line-height: 1.05;
+      color: var(--white);
+      max-width: 800px;
+      margin-bottom: 10px;
+      opacity: 0;
+      animation: fadeUp 0.9s 0.35s ease forwards;
+    }
+    h1 em { font-style: italic; color: var(--gold-light); }
+
+    .divider {
+      width: 60px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 28px auto;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.5s ease forwards;
+    }
+
+    .subheadline {
+      font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+      font-weight: 300;
+      color: #bfb89e;
+      max-width: 500px;
+      line-height: 1.75;
+      margin-bottom: 48px;
+      opacity: 0;
+      animation: fadeUp 0.8s 0.6s ease forwards;
+    }
+
+    /* ── CTA BUTTON ── */
+    .cta-wrap {
+      opacity: 0;
+      animation: fadeUp 0.8s 0.75s ease forwards;
+    }
+
+    .cta-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+      background-size: 200% 200%;
+      color: var(--ink);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 20px 46px;
+      border: none;
+      cursor: pointer;
+      transition: background-position 0.4s ease, transform 0.2s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 40px rgba(201,168,76,0.25);
+    }
+    .cta-btn:hover {
+      background-position: right center;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 60px rgba(201,168,76,0.45);
+    }
+    .cta-btn:active { transform: translateY(0); }
+    .cta-btn svg { width: 22px; height: 22px; flex-shrink: 0; fill: var(--ink); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid #1a1814;
+      padding: 24px;
+      text-align: center;
+      font-size: 0.68rem;
+      color: #4a4640;
+      letter-spacing: 0.08em;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 520px) {
+      .corner { width: 34px; height: 34px; }
+      .cta-btn { padding: 18px 30px; font-size: 0.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="corner corner--tl"></div>
+  <div class="corner corner--tr"></div>
+  <div class="corner corner--bl"></div>
+  <div class="corner corner--br"></div>
+
+  <p class="eyebrow"><span>Exclusive Digital Programme</span></p>
+
+  <h1>Stop Trading Time<br>for <em>Pocket Change</em></h1>
+
+  <div class="divider"></div>
+
+  <p class="subheadline">
+    Thousands of people are generating real income online — not someday, but right now.
+    The information you've been missing is one conversation away.
+  </p>
+
+  <div class="cta-wrap">
+    <!-- ============================================================
+         WHATSAPP BUTTON
+         Replace 234XXXXXXXXXX with your WhatsApp number
+         (international format, no + or spaces)
+    ============================================================ -->
+    <a class="cta-btn"
+       href="https://wa.me/234XXXXXXXXXX?text=Hi%2C%20I%20just%20saw%20your%20advert%20and%20I%27m%20interested.%20Tell%20me%20more."
+       target="_blank" rel="noopener noreferrer">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+      </svg>
+      Click Here To Continue
+    </a>
+  </div>
+</section>
+
+<footer>
+  &copy; 2026 &nbsp;·&nbsp; All Rights Reserved &nbsp;·&nbsp; This page is not affiliated with Facebook or Meta Inc.
+</footer>
+
+</body>
+</html>
